@@ -5,24 +5,19 @@
     <title>サンプルアプリケーション</title>
 </head>
 <body>
-    <h1>置換マシン</h1>
-    <div>
-        <!-- textarea -->
-        <textarea cols="60" rows="5" id="tarea">吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。</textarea>
-
-    </div>
-
-    <!-- input 2つ -->
-    <input type="text" id="input1">
-    <input type="text" id="input2">
-
-    
-    <!-- button -->
-    <button id="btn">置換</button>
-
-
-    <!-- p -->
-    <p id="result">結果表示</p>
-    <script src="index.js"></script>
+    <form><input type="button" value="行く場所" onClick="random()"> 
+        <span id="omikuji">表示場所</span></form>
+        
+        <script type="text/javascript">
+        function random() {
+        var rand = Math.floor( Math.random() * 5) ; //おみくじの目の生成
+                if (rand == 0) msg = "ラーメン";
+            if (rand == 1) msg = "サイゼリヤ";
+            if (rand == 2) msg = "家でだらだら";
+            if (rand == 3) msg = "県外";
+            if (rand == 4) msg = "ショッピング";
+        document.getElementById("omikuji").innerHTML = msg; //おみくじの目の出力
+        }
+        </script>
 </body>
 </html>
